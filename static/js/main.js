@@ -22,7 +22,7 @@ fetch(path + "games-list.html")
     });
 });
 
-fetch(path + "nba-2k14/post/individual-mods-list.html")
+fetch(path + "./nba-2k14/post/individual-mods-list.html")
     .then(res => res.text())
     .then(html => {
     const modsList = document.getElementById("individual-mods-list");
@@ -35,7 +35,7 @@ fetch(path + "nba-2k14/post/individual-mods-list.html")
     });
 });
 
-fetch(path + "nba-2k14/post/mod-packs-list.html")
+fetch(path + "./nba-2k14/post/mod-packs-list.html")
     .then(res => res.text())
     .then(html => {
     const modsList = document.getElementById("mod-packs-list");
