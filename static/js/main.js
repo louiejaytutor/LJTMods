@@ -1,10 +1,10 @@
 let isDark = localStorage.getItem('dark_mode') === 'true';
 
 fetch("games.html")
-  .then(res => res.text())
-  .then(html => {
-     document.getElementById("games-list").innerHTML = html;
-  });
+    .then(res => res.text())
+    .then(html => {
+    document.getElementById("games-list").innerHTML = html;
+});
 
 function applyTheme() {
     const theme = document.getElementById('theme');
