@@ -22,6 +22,32 @@ fetch(path + "games-list.html")
     });
 });
 
+fetch(path + "individual-mods-list.html")
+    .then(res => res.text())
+    .then(html => {
+    const modsList = document.getElementById("individual-mods-list");
+    modsList.innerHTML = html;
+
+    const mods = modsList.querySelectorAll(".post-item");
+    mods.forEach(mod => {
+        const originalHref = mod.getAttribute("href");
+        mod.setAttribute("href", path + originalHref);
+    });
+});
+
+fetch(path + "mod-packs-list.html")
+    .then(res => res.text())
+    .then(html => {
+    const modsList = document.getElementById("mod-packs-list");
+    modsList.innerHTML = html;
+
+    const mods = modsList.querySelectorAll(".post-item");
+    mods.forEach(mod => {
+        const originalHref = mod.getAttribute("href");
+        mod.setAttribute("href", path + originalHref);
+    });
+});
+
 function applyTheme() {
     const theme = document.getElementById('theme');
     const logo = document.getElementById('logo');
