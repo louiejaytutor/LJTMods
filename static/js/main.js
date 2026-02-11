@@ -6,9 +6,7 @@ const gtasanandreas_path = window.location.pathname.includes('/gta-san-andreas')
 const nba2k11_path = window.location.pathname.includes('/nba-2k11');
 const nba2k14_path = window.location.pathname.includes('/nba-2k14');
 
-fetch(path + "games-list.html")
-    .then(res => res.text())
-    .then(html => {
+fetch(path + "games-list.html").then(res => res.text()).then(html => {
     const gamesList = document.getElementById("games-list");
     gamesList.innerHTML = html;
 
@@ -22,10 +20,8 @@ fetch(path + "games-list.html")
     });
 });
 
-fetch(path + "./nba-2k14/post/individual-mods-list.html")
-    .then(res => res.text())
-    .then(html => {
-    const modsList = document.getElementById("individual-mods-list");
+fetch(path + "nba-2k14/post/mod-packs-list.html").then(res => res.text()).then(html => {
+    const modsList = document.getElementById("mod-packs-list");
     modsList.innerHTML = html;
 
     const mods = modsList.querySelectorAll(".post-item");
@@ -35,10 +31,8 @@ fetch(path + "./nba-2k14/post/individual-mods-list.html")
     });
 });
 
-fetch(path + "./nba-2k14/post/mod-packs-list.html")
-    .then(res => res.text())
-    .then(html => {
-    const modsList = document.getElementById("mod-packs-list");
+fetch(path + "nba-2k14/post/individual-mods-list.html").then(res => res.text()).then(html => {
+    const modsList = document.getElementById("individual-mods-list");
     modsList.innerHTML = html;
 
     const mods = modsList.querySelectorAll(".post-item");
