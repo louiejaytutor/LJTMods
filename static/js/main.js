@@ -35,17 +35,6 @@ function applyTheme() {
         logo.src = path +'static/img/logo.png';
         label.textContent = "Dark Mode: Off";
     }
-
-    const favicon = document.querySelector('link[rel="icon"]');
-    const appleIcon = document.querySelector('link[rel="apple-touch-icon"]');
-    if (windowIsDark) {
-        favicon.href = path + 'static/img/logo-1.png';
-        appleIcon.href = path + 'static/img/logo-1.png';
-    }
-    else {
-        favicon.href = path + 'static/img/logo.png';
-        appleIcon.href = path + 'static/img/logo.png';
-    }
 }
 
 function setDarkMode() {
@@ -61,14 +50,14 @@ function setDarkMode() {
     }
 }
 
-applyTheme(isDark);
-
 function scrollToTop() {
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
     });
 }
+
+applyTheme(isDark);
 
 window.onscroll = function() {
     const scrollBtn = document.getElementById("scrollToTopBtn");
@@ -80,3 +69,16 @@ window.onscroll = function() {
         scrollBtn.classList.remove("show");
     }
 };
+
+windowIsDark.addEventListener('change', (e) => {
+    const favicon = document.querySelector('link[rel="icon"]');
+    const appleIcon = document.querySelector('link[rel="apple-touch-icon"]');
+    if (windowIsDark) {
+        favicon.href = path + 'static/img/logo-1.png';
+        appleIcon.href = path + 'static/img/logo-1.png';
+    }
+    else {
+        favicon.href = path + 'static/img/logo.png';
+        appleIcon.href = path + 'static/img/logo.png';
+    }
+});
