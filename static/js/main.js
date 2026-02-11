@@ -4,7 +4,9 @@ const path = window.location.pathname.includes('/post/') ? '../../' : '';
 fetch(path + "games-list.html")
     .then(res => res.text())
     .then(html => {
-    document.getElementById("games-list").innerHTML = html;
+    const gamesList = document.getElementById("games-list");
+    gamesList.innerHTML = html;
+    
     const items = gamesList.querySelectorAll(".post-item");
     items.forEach(item => {
         const originalHref = item.getAttribute("href");
