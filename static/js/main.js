@@ -16,13 +16,16 @@ fetch(path + "games-list.html")
         const originalHref = item.getAttribute("href");
         item.setAttribute("href", path + originalHref);
         if (i === 0) {
-            item.classList.add(gtasanandreas_path ? "active" : "");
+            if (gtasanandreas_path)
+                item.classList.add("active");
         }
         else if (i === 1) {
-            item.classList.add(nba2k11_path ? "active" : "");
+            if (nba2k11_path)
+                item.classList.add("active");
         }
         else if (i === 2) {
-            item.classList.add(nba2k14_path ? "active" : "");
+            if (nba2k14_path)
+                item.classList.add("active");
         }
     });
 });
