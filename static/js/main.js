@@ -20,6 +20,10 @@ fetch(path + "games-list.html").then(res => res.text()).then(html => {
     });
 });
 
+fetch(path + "nba-2k14/post/mods-list.html").then(res => res.text()).then(html => {
+    document.getElementById("mods-list").innerHTML = html;
+});
+
 fetch(path + "nba-2k14/post/mod-packs-list.html").then(res => res.text()).then(html => {
     const modsList = document.getElementById("mod-packs-list");
     modsList.innerHTML = html;
