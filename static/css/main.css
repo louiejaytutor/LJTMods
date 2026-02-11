@@ -175,7 +175,7 @@ body {
 }
 .post-name {
     font-size: 14px;
-    max-width: 225px;
+    max-width: 215px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
