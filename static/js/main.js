@@ -1,5 +1,5 @@
 let isDark = localStorage.getItem('dark_mode') === 'true';
-let windowIsDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+let windowIsDark = window.matchMedia('(prefers-color-scheme: dark)');
 
 const path = window.location.pathname.includes('/post/') ? '../../' : '';
 
@@ -73,7 +73,7 @@ window.onscroll = function() {
 windowIsDark.addEventListener('change', (e) => {
     const favicon = document.querySelector('link[rel="icon"]');
     const appleIcon = document.querySelector('link[rel="apple-touch-icon"]');
-    if (windowIsDark) {
+    if (e.matches) {
         favicon.href = path + 'static/img/logo-1.png';
         appleIcon.href = path + 'static/img/logo-1.png';
     }
