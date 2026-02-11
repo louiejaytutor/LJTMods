@@ -1,6 +1,7 @@
 let isDark = localStorage.getItem('dark_mode') === 'true';
+const path = window.location.pathname.includes('/post/') ? '../../' : '';
 
-fetch("games-list.html")
+fetch(path + "games-list.html")
     .then(res => res.text())
     .then(html => {
     document.getElementById("games-list").innerHTML = html;
@@ -10,17 +11,14 @@ function applyTheme() {
     const theme = document.getElementById('theme');
     const logo = document.getElementById('logo');
     const label = document.getElementById("toggle-label");
-
-    const post = window.location.pathname.includes('/post/') ? '../../' : '';
-
     if (isDark) {
-        theme.href = post +'static/css/dark.css';
-        logo.src = post +'static/img/logo-1.png';
+        theme.href = path +'static/css/dark.css';
+        logo.src = path +'static/img/logo-1.png';
         label.textContent = "Dark Mode: On";
     }
     else {
-        theme.href = post +'static/css/light.css';
-        logo.src = post +'static/img/logo.png';
+        theme.href = path +'static/css/light.css';
+        logo.src = path +'static/img/logo.png';
         label.textContent = "Dark Mode: Off";
     }
 }
