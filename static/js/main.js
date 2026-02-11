@@ -1,16 +1,29 @@
 let isDark = localStorage.getItem('dark_mode') === 'true';
 const path = window.location.pathname.includes('/post/') ? '../../' : '';
 
+const gtasanandreas_path = window.location.pathname.includes('gta-san-andreas/post/');
+const nba2k11_path = window.location.pathname.includes('nba-2k11/post/');
+const nba2k14_path = window.location.pathname.includes('nba-2k14/post/');
+
 fetch(path + "games-list.html")
     .then(res => res.text())
     .then(html => {
     const gamesList = document.getElementById("games-list");
     gamesList.innerHTML = html;
-    
+
     const items = gamesList.querySelectorAll(".post-item");
-    items.forEach(item => {
+    items.forEach((item, i) => {
         const originalHref = item.getAttribute("href");
         item.setAttribute("href", path + originalHref);
+        if (i === 0) {
+            item.classList.add(gtasanandreas_path ? "active" : "");
+        }
+        else if (i === 1) {
+            item.classList.add(nba2k11_path ? "active" : "");
+        }
+        else if (i === 2) {
+            item.classList.add(nba2k14_path ? "active" : "");
+        }
     });
 });
 
