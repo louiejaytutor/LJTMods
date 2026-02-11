@@ -1,4 +1,5 @@
 let isDark = localStorage.getItem('dark_mode') === 'true';
+let windowIsDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
 const path = window.location.pathname.includes('/post/') ? '../../' : '';
 
@@ -33,6 +34,17 @@ function applyTheme() {
         theme.href = path +'static/css/light.css';
         logo.src = path +'static/img/logo.png';
         label.textContent = "Dark Mode: Off";
+    }
+
+    const favicon = document.querySelector('link[rel="icon"]');
+    const appleIcon = document.querySelector('link[rel="apple-touch-icon"]');
+    if (windowIsDark) {
+        favicon.href = path + 'static/img/logo-1.png';
+        appleIcon.href = path + 'static/img/logo-1.png';
+    }
+    else {
+        favicon.href = path + 'static/img/logo.png';
+        appleIcon.href = path + 'static/img/logo.png';
     }
 }
 
