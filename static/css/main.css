@@ -226,7 +226,10 @@ body {
 }
 
 @media screen and (max-width: 1200px) {
-    .header-container, 
+    .header-nav {
+        padding: 0;
+    }
+    .header-container,
     .container {
         width: 100%;
         padding: 0 15px;
