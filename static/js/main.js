@@ -1,7 +1,7 @@
 let isDark = localStorage.getItem('dark_mode') === 'true';
 let windowIsDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-const path = window.location.pathname.includes('/post/') ? '../../' : '../';
+const path = window.location.pathname.includes('/post/') ? '../../' : '';
 
 const gtasanandreas_path = window.location.pathname.includes('/gta-san-andreas');
 const nba2k11_path = window.location.pathname.includes('/nba-2k11');
