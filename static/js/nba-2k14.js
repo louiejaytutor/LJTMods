@@ -1,4 +1,4 @@
-fetch(path + "nba-2k14/post/mods-list.html").then(res => res.text()).then(html => {
+fetch(path + "post/mods-list.html").then(res => res.text()).then(html => {
     document.getElementById("mods-list").innerHTML = html;
     if (window.location.hash) {
         const targetId = window.location.hash.substring(1);
@@ -12,7 +12,7 @@ fetch(path + "nba-2k14/post/mods-list.html").then(res => res.text()).then(html =
     }
 });
 
-fetch(path + "nba-2k14/post/mod-packs-list.html").then(res => res.text()).then(html => {
+fetch(path + "post/mod-packs-list.html").then(res => res.text()).then(html => {
     const modsList = document.getElementById("mod-packs-list");
     modsList.innerHTML = html;
 
@@ -23,7 +23,7 @@ fetch(path + "nba-2k14/post/mod-packs-list.html").then(res => res.text()).then(h
     });
 });
 
-fetch(path + "nba-2k14/post/individual-mods-list.html").then(res => res.text()).then(html => {
+fetch(path + "post/individual-mods-list.html").then(res => res.text()).then(html => {
     const modsList = document.getElementById("individual-mods-list");
     modsList.innerHTML = html;
 
