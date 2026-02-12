@@ -183,7 +183,6 @@ body {
 .post-date {
     color: var(--color-4);
     font-size: 12px;
-    width: 120px;
 }
 .post-list .post-date {
     max-width: 125px;
