@@ -6,6 +6,7 @@ const path = window.location.pathname.includes('/post/') ? '../../' : '';
 const gtasanandreas_path = window.location.pathname.includes('/gta-san-andreas');
 const nba2k11_path = window.location.pathname.includes('/nba-2k11');
 const nba2k14_path = window.location.pathname.includes('/nba-2k14');
+const stickmanbasketball_path = window.location.pathname.includes('/stickman-basketball');
 
 fetch(path + "games-list.html").then(res => res.text()).then(html => {
     const gamesList = document.getElementById("games-list");
@@ -18,6 +19,7 @@ fetch(path + "games-list.html").then(res => res.text()).then(html => {
         if (i === 0 && gtasanandreas_path) item.classList.add("active");
         if (i === 1 && nba2k11_path) item.classList.add("active");
         if (i === 2 && nba2k14_path) item.classList.add("active");
+        if (i === 3 && stickmanbasketball_path) item.classList.add("active");
     });
 });
 
