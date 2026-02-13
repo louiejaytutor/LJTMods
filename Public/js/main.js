@@ -45,6 +45,24 @@ windowIsDark.addEventListener('change', (e) => {
     }
 });
 
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+window.onscroll = function() {
+    const scrollBtn = document.getElementById("scrollToTopBtn");
+
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        scrollBtn.classList.add("show");
+    }
+    else {
+        scrollBtn.classList.remove("show");
+    }
+};
+
 function FetchGamesList() {
     fetch("Views/Partials/GamesList.html").then(result => result.text()).then(html => {
         document.getElementById("games-list").innerHTML = html;
