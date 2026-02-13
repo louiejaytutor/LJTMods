@@ -123,8 +123,11 @@ body {
     text-align: left;
 }
 .post-description a {
-    margin-top: 15px;
-    width: 71px;
+    display: inline;
+}
+.post-description a::after {
+    content: '';
+    display: block;
 }
 .post-image-grid {
     font-size: 12px;
@@ -188,6 +191,7 @@ body {
     max-width: 125px;
 }
 
+/* Scroll to Top Button */
 #scrollToTopBtn {
     cursor: pointer;
     height: 45px;
