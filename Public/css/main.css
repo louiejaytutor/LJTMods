@@ -209,6 +209,24 @@ body {
     max-width: 125px;
 }
 
+/* PAGINATION */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.pagination a {
+    text-decoration: none;
+}
+.pagination a:hover {
+    text-decoration: underline;
+}
+.pagination .active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 /* SCROLL TO TOP BUTTON */
 #scrollToTopBtn {
     cursor: pointer;
