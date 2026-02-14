@@ -39,17 +39,5 @@ async function Router() {
     document.getElementById("app").innerHTML = "<h1>404 Not Found</h1>";
 }
 
-function navigateTo(url) {
-    history.pushState(null, null, url);
-    Router();
-}
-
-document.addEventListener("click", e => {
-    if (e.target.matches("[data-link]")) {
-        e.preventDefault();
-        navigateTo(e.target.href);
-    }
-});
-
 window.addEventListener("popstate", Router);
 window.addEventListener("DOMContentLoaded", Router);
