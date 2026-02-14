@@ -8,15 +8,19 @@ const routes = [
     { path: "^#/$", controller: HomeController.Index },
 
     { path: "^#/gta-san-andreas$", controller: GTASanAndreasController.Index },
+    { path: "^#/gta-san-andreas/page/([0-9]+)$", controller: GTASanAndreasController.Index },
     { path: "^#/gta-san-andreas/post/([0-9]+)$", controller: GTASanAndreasController.Post },
     
     { path: "^#/nba-2k11$", controller: NBA2k11Controller.Index },
+    { path: "^#/nba-2k11/page/([0-9]+)$", controller: NBA2k11Controller.Index },
     { path: "^#/nba-2k11/post/([0-9]+)$", controller: NBA2k11Controller.Post },
 
     { path: "^#/nba-2k14$", controller: NBA2k14Controller.Index },
+    { path: "^#/nba-2k14/page/([0-9]+)$", controller: NBA2k14Controller.Index },
     { path: "^#/nba-2k14/post/([0-9]+)$", controller: NBA2k14Controller.Post },
 
     { path: "^#/stickman-basketball$", controller: StickmanBasketballController.Index },
+    { path: "^#/stickman-basketball/page/([0-9]+)$", controller: StickmanBasketballController.Index },
     { path: "^#/stickman-basketball/post/([0-9]+)$", controller: StickmanBasketballController.Post }
 ];
 
