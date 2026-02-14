@@ -1,15 +1,21 @@
 export const StickmanBasketballController = {
-    async Index() {
+    async Index(page = 1) {
+        page = parseInt(page) || 1;
+
         const response = await fetch("Views/StickmanBasketball/Index.html");
         const html = await response.text();
         document.title = "Stickman Basketball - LJT Mods";
         document.getElementById("app").innerHTML = html;
 
-        const gameName = "stickman-basketball";
-        FetchGamesList();
-        FetchModPacksList(gameName);
-        FetchIndividualModsList(gameName);
-        FetchModsList(gameName);
+        const game = "stickman-basketball";
+        FetchGamesList(game);
+        FetchModPacksList(game);
+        FetchIndividualModsList(game);
+        FetchModsList(game);
+
+        setTimeout(() => {
+            applyPagination(game, page);
+        }, 300);
     },
 
     async Post(id) {
@@ -18,10 +24,10 @@ export const StickmanBasketballController = {
         document.title = "Stickman Basketball - " + id + " | LJT Mods";
         document.getElementById("app").innerHTML = html;
 
-        const gameName = "stickman-basketball";
-        FetchGamesList();
-        FetchModPacksList(gameName);
-        FetchIndividualModsList(gameName);
-        FetchModDetails(gameName, id);
+        const game = "stickman-basketball";
+        FetchGamesList(game);
+        FetchModPacksList(game);
+        FetchIndividualModsList(game);
+        FetchModDetails(game, id);
     }
 };
